@@ -94,7 +94,9 @@ export function createEditOverlay(target) {
  */
 function destroyEditOverlay() {
   if (overlay) {
-    overlay.parentNode.removeChild(overlay);
+    if (overlay.parentNode) {
+      overlay.parentNode.removeChild(overlay);
+    }
     overlay = null;
   }
 
